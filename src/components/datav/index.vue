@@ -7,19 +7,15 @@
 
       <dv-border-box-1 class="main-container">
         <div class="mc-top">
-          <Top-Left-Cmp name='123' />
-          <Top-Left-Cmp name='123' />
-          <Top-Left-Cmp
-            name='累计回收总量'
-            num='123'
-            unit='元'
-          />
-          <Top-Left-Cmp name='123' />
-          <Top-Left-Cmp name='123' />
-          <Top-Left-Cmp name='123' />
-          <Top-Left-Cmp name='123' />
-          <Top-Left-Cmp name='123' />
-          <Top-Left-Cmp name='123' />
+          <Top-Left-Cmp name="123" />
+          <Top-Left-Cmp name="123" />
+          <Top-Left-Cmp name="累计回收总量" num="123" unit="元" />
+          <Top-Left-Cmp name="123" />
+          <Top-Left-Cmp name="123" />
+          <Top-Left-Cmp name="123" />
+          <Top-Left-Cmp name="123" />
+          <Top-Left-Cmp name="123" />
+          <Top-Left-Cmp name="123" />
         </div>
         <div class="mc-ct">
           <div class="mc-left">
@@ -35,13 +31,13 @@
                 <div class="mc-left-itm-tl-lf">新增用户数</div>
                 <div class="mc-left-itm-tl-rt">/人</div>
               </div>
-              <TopMiddleCmp></TopMiddleCmp>
+              <TopMiddleCmp1></TopMiddleCmp1>
             </div>
-            <div class="mc-left-itm">
+            <div class="mc-left-itm flexCloum">
               <div class="mc-left-itm-tl">
                 <div class="mc-left-itm-tl-lf">上门回收单数</div>
               </div>
-              <div class="mc-left-itm-ct">
+              <div class="mc-left-itm-ct flexRow">
                 <div class="order_num">
                   <div class="order_num-hd">
                     <span class="order_num-hd-lf">6,000</span>
@@ -129,8 +125,8 @@
                 <div class="mc-center-hd-ct-count">
                   <dv-digital-flop
                     :config="config"
-                    animationFrame='500'
-                    style="width:200px;height:50px;padding-top:20px"
+                    animationFrame="500"
+                    style="width: 200px; height: 50px; padding-top: 20px"
                   />
                   <span class="mc-center-hd-ct-unit">kg</span>
                 </div>
@@ -143,6 +139,11 @@
                 </div>
               </div>
             </div>
+            <div class="map"></div>
+            <div class="ct_bt">
+              <div class="ct_bt-tl">实时回收情况</div>
+              <dv-scroll-board :config="dataConfig" class="ct_bt-data" />
+            </div>
           </div>
           <div class="mc-right">
             <div class="mc-left-itm">
@@ -150,90 +151,60 @@
                 <div class="mc-left-itm-tl-lf">回收时间分布</div>
                 <div class="mc-left-itm-tl-rt">/公斤</div>
               </div>
-              <TopMiddleCmp></TopMiddleCmp>
+              <TopMiddleCmp2></TopMiddleCmp2>
             </div>
             <div class="mc-left-itm">
               <div class="mc-left-itm-tl">
                 <div class="mc-left-itm-tl-lf">近7日回收人数</div>
                 <div class="mc-left-itm-tl-rt">/人</div>
               </div>
-              <TopMiddleCmp></TopMiddleCmp>
+              <TopMiddleCmp3></TopMiddleCmp3>
             </div>
-            <div class="mc-left-itm">
-              <div class="mc-left-itm-tl">
-                <div class="mc-left-itm-tl-lf">上门回收单数</div>
+            <div class="fun3">
+              <div class="fun3_itm">
+                <div class="mc-left-itm-tl">
+                  <div class="mc-left-itm-tl-lf">职业分布</div>
+                </div>
+                <RadarChart />
               </div>
-              <div class="mc-left-itm-ct">
-                <div class="order_num">
-                  <div class="order_num-hd">
-                    <span class="order_num-hd-lf">6,000</span>
-                    <span class="order_num-hd-rt">单</span>
-                  </div>
-                  <div class="order_num-bt">上门回收订单数</div>
+              <div class="fun3_itm flexCloum">
+                <div class="mc-left-itm-tl">
+                  <div class="mc-left-itm-tl-lf">门店排行</div>
                 </div>
-                <div class="order_num">
-                  <div class="order_num-hd">
-                    <span class="order_num-hd-lf">6,000</span>
-                    <span class="order_num-hd-rt">kg</span>
+                <div class="rank">
+                  <div class="rank_itm">
+                    <img class="rank_itm-img" src="./img/ic_second.png" />
+                    <div class="rank_itm-tx">2000</div>
+                    <div class="rank_itm-bar"></div>
+                    <div class="rank_itm-name">格林小城店</div>
                   </div>
-                  <div class="order_num-bt">上门回收总量</div>
-                </div>
-                <div class="order_num">
-                  <div class="order_num-hd">
-                    <span class="order_num-hd-lf">98.5</span>
-                    <span class="order_num-hd-rt">%</span>
+                  <div class="rank_itm">
+                    <img class="rank_itm-img" src="./img/ic_top.png" />
+                    <div class="rank_itm-tx">2000</div>
+                    <div class="rank_itm-bar"></div>
+                    <div class="rank_itm-name">格林小城店</div>
                   </div>
-                  <div class="order_num-bt">上门回收订单数</div>
+                  <div class="rank_itm">
+                    <img class="rank_itm-img" src="./img/ic_third.png" />
+                    <div class="rank_itm-tx">2000</div>
+                    <div class="rank_itm-bar"></div>
+                    <div class="rank_itm-name">格林小城店</div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="mc-left-itm bottom">
-              <div class="mc-left-itm-tl">
-                <div class="mc-left-itm-tl-lf">品类分布</div>
-              </div>
-              <div class="classify">
-                <Bottom-Left-Chart-1 />
-              </div>
-              <div class="classify_ct">
-                <div class="classify_lf">
-                  <div class="classify_itm">
-                    <span class="classify_itm-lf"></span>
-                    <span class="classify_itm-ct">纸类</span>
-                    <span class="classify_itm-rt">20%</span>
-                  </div>
-                  <div class="classify_itm">
-                    <span class="classify_itm-lf"></span>
-                    <span class="classify_itm-ct">纸类</span>
-                    <span class="classify_itm-rt">20%</span>
-                  </div>
-                  <div class="classify_itm">
-                    <span class="classify_itm-lf"></span>
-                    <span class="classify_itm-ct">纸类</span>
-                    <span class="classify_itm-rt">20%</span>
-                  </div>
+            <div class="fun4">
+              <div class="fun4_itm flexCloum">
+                <div class="mc-left-itm-tl">
+                  <div class="mc-left-itm-tl-lf">回收经理排行</div>
                 </div>
-                <div class="classify_rt">
-                  <div class="classify_itm">
-                    <span class="classify_itm-lf"></span>
-                    <span class="classify_itm-ct">纸类</span>
-                    <span class="classify_itm-rt">20%</span>
-                  </div>
-                  <div class="classify_itm">
-                    <span class="classify_itm-lf"></span>
-                    <span class="classify_itm-ct">纸类</span>
-                    <span class="classify_itm-rt">20%</span>
-                  </div>
-                  <div class="classify_itm">
-                    <span class="classify_itm-lf"></span>
-                    <span class="classify_itm-ct">纸类</span>
-                    <span class="classify_itm-rt">20%</span>
-                  </div>
-                  <div class="classify_itm">
-                    <span class="classify_itm-lf"></span>
-                    <span class="classify_itm-ct">纸类</span>
-                    <span class="classify_itm-rt">20%</span>
-                  </div>
+                <dv-capsule-chart :config="mRangconfig" class="fun4_rank" />
+              </div>
+              <div class="fun4_itm">
+                <div class="mc-left-itm-tl">
+                  <div class="mc-left-itm-tl-lf">投递方式</div>
                 </div>
+                <Bottom-Left-Chart-2 />
               </div>
             </div>
           </div>
@@ -260,92 +231,133 @@
           </div>
         </div> -->
       </dv-border-box-1>
-
     </dv-full-screen-container>
   </div>
 </template>
 
 <script>
-import TopLeftCmp from './TopLeftCmp'
-import TopMiddleCmp from './TopMiddleCmp'
-import TopRightCmp from './TopRightCmp'
+import TopLeftCmp from "./TopLeftCmp";
+import TopMiddleCmp from "./TopMiddleCmp";
+import TopMiddleCmp1 from "./TopMiddleCmp1";
+import TopMiddleCmp2 from "./TopMiddleCmp2";
+import TopMiddleCmp3 from "./TopMiddleCmp3";
 
-import BottomLeftChart1 from './BottomLeftChart1'
-import BottomLeftChart2 from './BottomLeftChart2'
+import TopRightCmp from "./TopRightCmp";
+import RadarChart from "./radarChart";
 
-import BottomRightTable1 from './BottomRightTable1'
-import BottomRightTable2 from './BottomRightTable2'
-import BottomRightTable3 from './BottomRightTable3'
-import BottomRightTable4 from './BottomRightTable4'
+import BottomLeftChart1 from "./BottomLeftChart1";
+import BottomLeftChart2 from "./BottomLeftChart2";
 
-function formatter (number) {
-  const numbers = number.toString().split('').reverse()
-  const segs = []
+import BottomRightTable1 from "./BottomRightTable1";
+import BottomRightTable2 from "./BottomRightTable2";
+import BottomRightTable3 from "./BottomRightTable3";
+import BottomRightTable4 from "./BottomRightTable4";
 
-  while (numbers.length) segs.push(numbers.splice(0, 3).join(''))
+function formatter(number) {
+  const numbers = number.toString().split("").reverse();
+  const segs = [];
 
-  return segs.join(',').split('').reverse().join('')
+  while (numbers.length) segs.push(numbers.splice(0, 3).join(""));
+
+  return segs.join(",").split("").reverse().join("");
 }
 const config1 = {
   number: [123456],
-  content: '{nt}',
+  content: "{nt}",
   formatter,
   rowGap: 20,
   style: {
     fontSize: 40,
-    fontWeight: 'bold',
-    fill: '#62DEFF',
-    lineCap: 'butt'
-  }
-}
+    fontWeight: "bold",
+    fill: "#62DEFF",
+    lineCap: "butt",
+  },
+};
 
 const config2 = {
   number: [654321],
-  content: '{nt}',
+  content: "{nt}",
   rowGap: 20,
   formatter,
   style: {
     fontSize: 40,
-    fontWeight: 'bold',
-    fill: '#62DEFF',
-    lineCap: 'butt'
-  }
-}
+    fontWeight: "bold",
+    fill: "#62DEFF",
+    lineCap: "butt",
+  },
+};
 
 export default {
-  name: 'DataView',
+  name: "DataView",
   components: {
     TopLeftCmp,
     TopMiddleCmp,
+    TopMiddleCmp1,
+    TopMiddleCmp2,
+    TopMiddleCmp3,
     TopRightCmp,
+    RadarChart,
     BottomLeftChart1,
     BottomLeftChart2,
     BottomRightTable1,
     BottomRightTable2,
     BottomRightTable3,
-    BottomRightTable4
+    BottomRightTable4,
   },
-  data () {
+  data() {
     return {
-      config: config1
-    }
+      config: config1,
+      dataConfig: {
+        header: ["门店名", "回收品类", "回收金额", "回收时间"],
+        headerBGC: "rgba(6, 71, 170, 0.3)",
+        oddRowBGC: "rgba(6, 71, 170, 0)",
+        evenRowBGC: "rgba(6, 71, 170, 0)",
+        rowNum: 4,
+        align: ["center", "center", "center", "center"],
+        data: [
+          ["春天路店", "塑料", "90元", "18:30"],
+          ["春天路店", "塑料", "90元", "18:30"],
+          ["春天路店", "塑料", "90元", "18:30"],
+          ["春天路店", "塑料", "90元", "18:30"],
+          ["春天路店", "塑料", "90元", "18:30"],
+        ],
+      },
+      mRangconfig: {
+        data: [
+          {
+            name: "南阳",
+            value: 167,
+          },
+          {
+            name: "周口",
+            value: 123,
+          },
+          {
+            name: "漯河",
+            value: 98,
+          },
+        ],
+        unit: "kg",
+        showValue: true,
+      },
+    };
   },
-  mounted () {
+  mounted() {
     setTimeout(() => {
-      this.config = config2
-    }, 2000)
+      this.config = config2;
+    }, 2000);
   },
   methods: {
-    formatter (number) {
-      const numbers = number.toString().split('').reverse()
-      const segs = []
+    formatter(number) {
+      const numbers = number.toString().split("").reverse();
+      const segs = [];
 
-      while (numbers.length) segs.push(numbers.splice(0, 3).join(''))
+      while (numbers.length) segs.push(numbers.splice(0, 3).join(""));
 
-      return segs.join(',').split('').reverse().join('')
-    }
-  }
-}
+      return segs.join(",").split("").reverse().join("");
+    },
+  },
+};
 </script>
 
 <style lang="less">
@@ -365,7 +377,7 @@ export default {
   }
 
   .main-header {
-    height: 103px;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -384,13 +396,13 @@ export default {
       color: #fff;
       font-weight: bold;
       text-align: center;
-      height: 103px;
-      line-height: 96px;
+      height: 100%;
+      line-height: 9vh;
       width: 100%;
       text-shadow: 0px 2px 6px rgba(255, 255, 255, 0.5);
       background-image: url(./img/hd_bg.png);
       background-position: center;
-      background-size: 100% 103px;
+      background-size: 100% 100%;
       background-repeat: no-repeat;
     }
 
@@ -401,7 +413,7 @@ export default {
   }
 
   .main-container {
-    height: calc(100vh - 103px);
+    height: calc(100vh - 10vh);
 
     .mc-top,
     .mc-bottom {
@@ -458,25 +470,48 @@ export default {
     }
   }
   .mc-left {
-    width: 512px;
+    width: 26%;
     padding-left: 30px;
   }
   .mc-left-itm {
-    width: 512px;
-    height: 175px;
+    width: 100%;
+    height: 21%;
     background-image: url(./img/left_itm.png);
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-bottom: 15px;
+    margin-bottom: 4px;
+    &.flexCloum {
+      display: flex;
+      flex-direction: column;
+    }
     &.bottom {
-      height: 210px;
+      height: 26%;
       background-image: url(./img/left_bt_bg.png);
       background-position: center;
       background-size: 100%;
       background-repeat: no-repeat;
       margin-bottom: 0;
       position: relative;
+    }
+  }
+  .ct_bt {
+    height: 26%;
+    background-image: url(./img/ct_bt_bg.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .ct_bt-tl {
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+    .ct_bt-data {
+      flex: 1;
     }
   }
   .mc-left-itm-tl {
@@ -498,15 +533,17 @@ export default {
       color: #ff9602;
     }
   }
+
   .mc-left-itm-ct {
     display: flex;
-    height: 109px;
-    margin-top: 18px;
+    flex: 1;
+    margin-top: 15px;
     align-items: center;
     background: rgba(32, 53, 204, 0.24);
+    padding-bottom: 2px;
     .order_num {
       flex: 1;
-      height: 70px;
+      height: 90%;
       border-right: 2px solid rgba(98, 222, 255, 0.26);
       &:last-child {
         border-right: none;
@@ -534,7 +571,7 @@ export default {
     }
   }
   .classify {
-    height: 210px;
+    height: 24%;
     width: 100%;
     position: absolute;
     top: 3px;
@@ -543,15 +580,15 @@ export default {
   .classify_ct {
     display: flex;
     .classify_lf {
-      padding-left: 70px;
-      padding-top: 30px;
+      padding-left: 3.6%;
+      padding-top: 2.7%;
       flex: 1;
     }
     .classify_rt {
-      padding-right: 70px;
+      padding-right: 3.6%;
     }
     .classify_itm {
-      padding-bottom: 15px;
+      padding-bottom: 1.4%;
     }
     .classify_itm-lf {
       width: 10px;
@@ -586,13 +623,13 @@ export default {
     .mc-center-hd {
       display: flex;
       .mc-center-hd-lf {
-        width: 170px;
-        height: 105px;
+        width: 8.8vw;
+        height: 9vh;
         padding-left: 20px;
         text-align: left;
         background-image: url(./img/ctr-top-lf.png);
         background-position: center;
-        background-size: 100%;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
       }
       .mc-center-hd-ct {
@@ -617,13 +654,13 @@ export default {
         }
       }
       .mc-center-hd-rt {
-        width: 170px;
-        height: 105px;
+        width: 8.8vw;
+        height: 9vh;
         padding-right: 20px;
         text-align: right;
         background-image: url(./img/ctr-top-rt.png);
         background-position: center;
-        background-size: 100%;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
       }
       .mc-center-hd-lab {
@@ -652,8 +689,92 @@ export default {
     }
   }
   .mc-right {
-    width: 512px;
+    width: 26%;
     padding-right: 30px;
+  }
+  .map {
+    height: 30vh;
+  }
+  .fun3 {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .fun3_itm {
+      width: 48%;
+      height: 100%;
+      background-image: url(./img/rt_bt_bg3.png);
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      &.flexCloum {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  .fun4 {
+    height: 21%;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .fun4_itm {
+      width: 48%;
+      height: 100%;
+      background-image: url(./img/rt_bt_bg3.png);
+      background-position: center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      &.flexCloum {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  .fun4_rank {
+    width: 100%;
+    flex: 1;
+  }
+  .rank {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    .rank_itm {
+      flex: 1;
+      width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      .rank_itm-img {
+        width: 2rem;
+        height: 1.6rem;
+        display: block;
+      }
+      .rank_itm-tx {
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+      }
+      .rank_itm-bar {
+        width: 0.5rem;
+        height: 40px;
+        background-image: linear-gradient(#e66465, #9198e5);
+        border-radius: 0.5rem;
+      }
+      .rank_itm-name {
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
   }
 }
 </style>

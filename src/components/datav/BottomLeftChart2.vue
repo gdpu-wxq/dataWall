@@ -1,87 +1,63 @@
 <template>
-  <div class="bottom-left-chart-2">
-    <div class="header-name">任务维修平均用时</div>
-    <div class="details-value"><span>55.1</span>小时</div>
+  <div class="bottom-left-chart-1">
     <dv-charts :option="option" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'BottomLeftChart2',
+  name: 'BottomLeftChart1',
   data () {
     return {
       option: {
+        grid: {
+          top: 0,
+          left: 30,
+          right: 30,
+          bottom: 0
+        },
         series: [
           {
-            type: 'gauge',
-            startAngle: -Math.PI / 2,
-            endAngle: Math.PI * 1.5,
-            arcLineWidth: 7,
+            type: 'pie',
+            radius: ['35%', '65%'],
             data: [
-              { name: '8小时以内', value: 25, gradient: ['#03c2fd', '#1ed3e5', '#2fded6'] },
-              { name: '24小时以内', value: 45, gradient: ['#03c2fd', '#1ed3e5', '#2fded6'], radius: '52%' },
-              { name: '48小时以内', value: 65, gradient: ['#03c2fd', '#1ed3e5', '#2fded6'], radius: '44%' },
-              { name: '72小时以内', value: 35, gradient: ['#03c2fd', '#1ed3e5', '#2fded6'], radius: '36%' },
-              { name: '大于72小时', value: 25, gradient: ['#03c2fd', '#1ed3e5', '#2fded6'], radius: '28%' }
+              { name: '监控系统', value: 93 },
+              { name: '收费系统', value: 65 },
             ],
-            axisLabel: {
-              show: false
-            },
-            axisTick: {
-              show: false
-            },
-            pointer: {
-              show: false
-            },
-            dataItemStyle: {
-              lineCap: 'round'
-            },
-            backgroundArc: {
-              show: false
-            },
-            details: {
-              show: true,
-              formatter: '{name}',
-              position: 'start',
-              offset: [-10, 0],
+            outsideLabel: {
+              labelLineEndLength: 10,
+              formatter: '{percent}%\n{name}',
               style: {
-                fill: '#fff',
-                fontSize: 12,
-                textAlign: 'right'
+                fill: '#fff'
               }
             }
           }
-        ]
+        ],
+        color: ['#00c0ff', '#3de7c9', '#fff', '#00c0ff', '#3de7c9', '#fff']
       }
     }
   }
 }
 </script>
 
-<style lang="less">
-.bottom-left-chart-2 {
-  .header-name {
-    height: 150px;
-    line-height: 150px;
-    font-size: 20px;
-    text-align: center;
-  }
+<style lang="less" scoped>
+.bottom-left-chart-1 {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
 
-  .details-value {
-    height: 40px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
+ 
 
-    span {
-      color: #00c0ff;
-      font-size: 45px;
-    }
-  }
-
-  .dv-charts-container {
-    height: calc(~"100% - 190px");
+  .decoration-ring {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid fade(#fefefe, 30);
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>

@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .bottom-left-chart-1 {
   position: relative;
   width: 100%;
