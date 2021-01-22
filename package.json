@@ -10,6 +10,7 @@
   "dependencies": {
     "@jiaminghi/data-view": "^2.3.8",
     "core-js": "^2.6.5",
+    "node-sass": "^5.0.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {

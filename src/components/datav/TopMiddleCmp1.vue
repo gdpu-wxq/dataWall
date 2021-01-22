@@ -17,22 +17,21 @@ export default {
           top: 20,
           left: 30,
           right: 30,
-          bottom: 70
+          bottom: 50
         },
         xAxis: {
           data: [
-            '10/01', '10/02', '10/03', '10/04', '10/05', '10/06',
-            '10/07', '10/07', '10/08'
+            '01/14', '01/15', '01/16', '01/17', '01/18', '01/19', '01/20'
           ],
           boundaryGap: false,
           axisLine: {
             style: {
-              stroke: '#999'
+              stroke: '#fff'
             }
           },
           axisLabel: {
             style: {
-              fill: '#999'
+              fill: '#fff'
             }
           },
           axisTick: {
@@ -55,17 +54,11 @@ export default {
           },
           axisTick: {
             show: false
-          },
-          min: 95,
-          max: 100,
-          interval: 0.5
+          }
         },
         series: [
           {
-            data: [
-              99.56, 99.66, 99.84, 99.22, 99.11, 99.45,
-              99.44, 99.81, 99.84
-            ],
+            data: [130, 155, 147, 158, 163, 149, 178],
             type: 'line',
             smooth: true,
             lineArea: {
@@ -73,7 +66,10 @@ export default {
               gradient: ['rgba(55, 162, 218, 0.6)', 'rgba(55, 162, 218, 0)']
             },
             label: {
-              show: true
+              show: true,
+              style: {
+                fill: '#fff'
+              }
             }
             // linePoint: {
             //   radius: 4,

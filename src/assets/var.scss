@@ -1,0 +1,22 @@
+$designWidth : 1920;//设计宽度
+$designHeight : 1080;//设计高度
+$fontScale: 80;//1rem=100px
+$bgColor: #003669;
+$borderColor: #00bcfe;
+ 
+/**
+ * 由设计尺寸获取实际显示宽度占比
+ * @param {Number} w  设计宽度  
+ * @return  **vw    
+ */
+@function getWidth($w){
+    @return ($w/$designWidth*100vw)
+};
+ 
+@function getHeight($h){
+    @return ($h/$designHeight*100vh)
+};
+
+@function getFontSize($f){
+    @return ($f/$fontScale*1rem)
+}

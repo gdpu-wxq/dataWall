@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import './assets/common.less'
+// import './utils/flex.min.js'
 
 import dataV from '@jiaminghi/data-view'
 

@@ -21,8 +21,8 @@ export default {
             type: 'pie',
             radius: ['35%', '65%'],
             data: [
-              { name: '监控系统', value: 93 },
-              { name: '收费系统', value: 65 },
+              { name: '上门', value: 20 },
+              { name: '到店', value: 80 }
             ],
             outsideLabel: {
               labelLineEndLength: 10,
@@ -33,7 +33,7 @@ export default {
             }
           }
         ],
-        color: ['#00c0ff', '#3de7c9', '#fff', '#00c0ff', '#3de7c9', '#fff']
+        color: ['#65D1F4', '#2765DE']
       }
     }
   }
@@ -46,9 +46,6 @@ export default {
   width: 100%;
   height: 100px;
   box-sizing: border-box;
-
- 
-
   .decoration-ring {
     position: absolute;
     width: 200px;

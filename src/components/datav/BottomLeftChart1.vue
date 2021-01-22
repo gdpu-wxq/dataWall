@@ -23,11 +23,12 @@ export default {
           {
             type: 'pie',
             data: [
-              { name: '监控系统', value: 93 },
-              { name: '收费系统', value: 65 },
-              { name: '通信系统', value: 32 },
-              { name: '供配电系统', value: 44 },
-              { name: '其它', value: 52 }
+              { name: '纸类', value: 49 },
+              { name: '塑料', value: 21 },
+              { name: '衣物', value: 7 },
+              { name: '五金', value: 8 },
+              { name: '大件家具', value: 0.10 },
+              { name: '家电3C', value: 3 }
             ],
             outsideLabel: {
               show: false,
@@ -39,7 +40,7 @@ export default {
             }
           }
         ],
-        color: ['#00c0ff', '#3de7c9', '#fff', '#00c0ff', '#3de7c9', '#fff']
+        color: ['#4DBAED', '#8C5AF6', '#E677E7', '#50C8A8', '#AFD14E', '#D3B239', '#D88055']
       }
     }
   }
