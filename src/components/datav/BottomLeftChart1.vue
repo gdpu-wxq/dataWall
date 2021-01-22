@@ -17,7 +17,7 @@ export default {
           top: 0,
           left: 30,
           right: 30,
-          bottom: 0
+          bottom: 10
         },
         series: [
           {
@@ -47,11 +47,12 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
+@import '../../assets/var.scss';
 .bottom-left-chart-1 {
   position: relative;
   width: 100%;
-  height: 210px;
+  height: getHeight(210);
   box-sizing: border-box;
 
   .header-name {

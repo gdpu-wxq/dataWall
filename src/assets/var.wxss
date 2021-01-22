@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/**
+ * 由设计尺寸获取实际显示宽度占比
+ * @param {Number} w  设计宽度  
+ * @return  **vw    
+ */

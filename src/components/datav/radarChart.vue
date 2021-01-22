@@ -12,10 +12,10 @@ const option1 = {
   },
   radar: {
     indicator: [
-      { name: '西峡', max: 300 },
-      { name: '周口', max: 300 },
-      { name: '南阳', max: 300 },
-      { name: '驻马店', max: 300 }
+      { name: '职业收卖', max: 50 },
+      { name: '普通居民', max: 50 },
+      { name: '商铺', max: 50 },
+      { name: '保洁员', max: 50 }
     ],
     polygon: true,
     axisLine: {
@@ -39,7 +39,7 @@ const option1 = {
   series: [
     {
       type: 'radar',
-      data: [111, 256, 178, 152],
+      data: [20, 40, 10, 30],
       label: {
         show: false,
         style: {

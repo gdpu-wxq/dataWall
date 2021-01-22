@@ -5,7 +5,8 @@
       <!-- <span class="top-left-num">{{num}}</span> -->
       <dv-digital-flop
         :config="config"
-        style="display:inlne-block; width:100px"
+        class= "aaa"
+        style="display:inlne-block; width:100px;"
       />
       <span class="top-left-unit">{{unit}}</span>
     </div>
@@ -26,7 +27,6 @@ const config1 = {
   content: '{nt}',
   formatter,
   style: {
-    fontSize: 20,
     fontWeight: 'bold',
     fill: '#fff',
     lineCap: 'butt'
@@ -78,8 +78,8 @@ export default {
 .top-left-tp{
   text-align: center;
   color: #fff;
-  font-size: 16px;
-  line-height: 40px;
+  font-size: getWidth(16);
+  line-height: getHeight(40);
 }
 .top-left-bt{
   text-align: center;
@@ -88,11 +88,14 @@ export default {
   justify-content: center;
 }
 .top-left-num{
-  font-size: 20px;
+  font-size: getWidth(18);
   color: #fff;
 }
 .top-left-unit{
   color: #ff9602;
-  font-size: 14px;
+  font-size: getWidth(14);
+}
+.aaa{
+  font-size: getWidth(18);
 }
 </style>
