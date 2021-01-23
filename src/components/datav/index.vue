@@ -10,7 +10,7 @@
               ["日", "一", "二", "三", "四", "五", "六"][new Date().getDay()]
             }}
           </div>
-          <div>{{ dateFormat("YYYY-mm-dd HH:MM", new Date()) }}</div>
+          <div>{{ today }}</div>
         </div>
       </div>
 
@@ -261,53 +261,53 @@
 </template>
 
 <script>
-import TopLeftCmp from "./TopLeftCmp";
-import TopMiddleCmp from "./TopMiddleCmp";
-import TopMiddleCmp1 from "./TopMiddleCmp1";
-import TopMiddleCmp2 from "./TopMiddleCmp2";
-import TopMiddleCmp3 from "./TopMiddleCmp3";
+import TopLeftCmp from './TopLeftCmp'
+import TopMiddleCmp from './TopMiddleCmp'
+import TopMiddleCmp1 from './TopMiddleCmp1'
+import TopMiddleCmp2 from './TopMiddleCmp2'
+import TopMiddleCmp3 from './TopMiddleCmp3'
 
-import RadarChart from "./radarChart";
+import RadarChart from './radarChart'
 
-import BottomLeftChart1 from "./BottomLeftChart1";
-import BottomLeftChart2 from "./BottomLeftChart2";
+import BottomLeftChart1 from './BottomLeftChart1'
+import BottomLeftChart2 from './BottomLeftChart2'
 
-function formatter(number) {
-  const numbers = number.toString().split("").reverse();
-  const segs = [];
+function formatter (number) {
+  const numbers = number.toString().split('').reverse()
+  const segs = []
 
-  while (numbers.length) segs.push(numbers.splice(0, 3).join(""));
+  while (numbers.length) segs.push(numbers.splice(0, 3).join(''))
 
-  return segs.join(",").split("").reverse().join("");
+  return segs.join(',').split('').reverse().join('')
 }
 const config1 = {
   number: [0],
-  content: "{nt}",
+  content: '{nt}',
   formatter,
   rowGap: 20,
   style: {
     fontSize: 40,
-    fontWeight: "bold",
-    fill: "#62DEFF",
-    lineCap: "butt",
-  },
-};
+    fontWeight: 'bold',
+    fill: '#62DEFF',
+    lineCap: 'butt'
+  }
+}
 
 let config2 = {
   number: [11929.91],
-  content: "{nt}",
+  content: '{nt}',
   rowGap: 20,
   formatter,
   style: {
     fontSize: 40,
-    fontWeight: "bold",
-    fill: "#62DEFF",
-    lineCap: "butt",
-  },
-};
+    fontWeight: 'bold',
+    fill: '#62DEFF',
+    lineCap: 'butt'
+  }
+}
 
 export default {
-  name: "DataView",
+  name: 'DataView',
   components: {
     TopLeftCmp,
     TopMiddleCmp,
@@ -316,251 +316,192 @@ export default {
     TopMiddleCmp3,
     RadarChart,
     BottomLeftChart1,
-    BottomLeftChart2,
+    BottomLeftChart2
   },
-  data() {
+  data () {
     return {
+      today: '',
       person: 0,
       money: 0,
       weight: 0,
       config: config1,
-      rowData: [
-        ["石井店", "黄纸", "326"],
-        ["石井店", "塑料", "10.2"],
-        ["春天路店", "厚铁", "78.8"],
-        ["格林小城店", "衣服", "185"],
-        ["春天路店", "拉罐", "0.8"],
-        ["格林小城店", "杂铁", "2.8"],
-        ["格林小城店", "矿泉水瓶", "4.1"],
-        ["春天路店", "中胶", "15.9"],
-        ["春天路店", "拉罐", "99.4"],
-        ["格林小城店", "中胶", "67.1"],
-        ["春天路店", "矿泉水瓶", "62.9"],
-        ["格林小城店", "杂铁", "2.4"],
-        ["格林小城店", "矿泉水瓶", "9.2"],
-        ["春天路店", "杂铁", "11.2"],
-        ["格林小城店", "/黄纸", "35.12"],
-        ["春天路店", "矿泉水瓶", "3.61"],
-        ["格林小城店", "废纸", "2"],
-        ["石井店", "花纸", "29.84"],
-        ["格林小城店", "杂铁", "11.47"],
-        ["格林小城店", "黄纸", "15.8"],
-        ["石井店", "拉罐", "6.4"],
-        ["格林小城店", "废纸统货", "5.04"],
-        ["春天路店", "黄纸", "2.6"],
-        ["格林小城店", "黄纸", "13.2"],
-        ["石井店", "黄纸", "29.72"],
-        ["格林小城店", "/花纸", "29.73"],
-        ["春天路店", "废纸", "38.4"],
-        ["格林小城店", "黄纸", "14.4"],
-        ["春天路店", "花纸", "6.84"],
-        ["格林小城店", "中胶", "8.64"],
-        ["格林小城店", "废纸", "8.04"],
-        ["石井店", "花纸", "61.36"],
-        ["格林小城店", "花纸", "16.94"],
-        ["石井店", "塑料统货", "77.8"],
-        ["格林小城店", "矿泉水瓶", "11.51"],
-        ["格林小城店", "冬装", "1.68"],
-        ["春天路店", "冬装", "3"],
-        ["格林小城店", "衣物统货", "10.87"],
-        ["春天路店", "黄纸", "58.49"],
-        ["格林小城店", "杂铁", "5.14"],
-        ["春天路店", "黄纸", "30"],
-        ["石井店", "黄纸", "38.4"],
-        ["格林小城店", "废纸统货", "4.08"],
-        ["春天路店", "台式电脑", "126.4"],
-        ["石井店", "废纸", "28"],
-        ["格林小城店", "黄纸", "47.2"],
-        ["春天路店", "废纸统货", "19.04"],
-        ["格林小城店", "花纸", "45.5"],
-        ["春天路店", "废纸统货", "5.06"],
-        ["格林小城店", "黄纸", "5"],
-        ["春天路店", "黄纸", "6.6"],
-        ["格林小城店", "塑料", "7.7"],
-        ["格林小城店", "废纸统货", "1449.2"],
-        ["春天路店", "废纸统货", "29.07"],
-        ["石井店", "杂铁", "9.1"],
-        ["石井店", "鞋包", "25.2"],
-        ["春天路店", "黄纸", "51.15"],
-        ["石井店", "黄纸", "66"],
-        ["春天路店", "花纸", "22.45"],
-        ["石井店", "花纸", "19.04"],
-      ],
       dataConfig: {
-        header: ["门店名", "回收品类", "回收金额", "回收时间"],
-        headerBGC: "rgba(6, 71, 170, 0.3)",
-        oddRowBGC: "rgba(6, 71, 170, 0)",
-        evenRowBGC: "rgba(6, 71, 170, 0)",
+        header: ['门店名', '回收品类', '回收金额', '回收时间'],
+        headerBGC: 'rgba(6, 71, 170, 0.3)',
+        oddRowBGC: 'rgba(6, 71, 170, 0)',
+        evenRowBGC: 'rgba(6, 71, 170, 0)',
         rowNum: 4,
-        align: ["center", "center", "center", "center"],
+        align: ['center', 'center', 'center', 'center'],
         data: [
-          ["石井店", "黄纸", "326"],
-          ["石井店", "塑料", "10.2"],
-          ["春天路店", "厚铁", "78.8"],
-          ["格林小城店", "衣服", "185"],
-          ["春天路店", "拉罐", "0.8"],
-          ["格林小城店", "杂铁", "2.8"],
-          ["格林小城店", "矿泉水瓶", "4.1"],
-          ["春天路店", "中胶", "15.9"],
-          ["春天路店", "拉罐", "99.4"],
-          ["格林小城店", "中胶", "67.1"],
-          ["春天路店", "矿泉水瓶", "62.9"],
-          ["格林小城店", "杂铁", "2.4"],
-          ["格林小城店", "矿泉水瓶", "9.2"],
-          ["春天路店", "杂铁", "11.2"],
-          ["格林小城店", "/黄纸", "35.12"],
-          ["春天路店", "矿泉水瓶", "3.61"],
-          ["格林小城店", "废纸", "2"],
-          ["石井店", "花纸", "29.84"],
-          ["格林小城店", "杂铁", "11.47"],
-          ["格林小城店", "黄纸", "15.8"],
-          ["石井店", "拉罐", "6.4"],
-          ["格林小城店", "废纸统货", "5.04"],
-          ["春天路店", "黄纸", "2.6"],
-          ["格林小城店", "黄纸", "13.2"],
-          ["石井店", "黄纸", "29.72"],
-          ["格林小城店", "/花纸", "29.73"],
-          ["春天路店", "废纸", "38.4"],
-          ["格林小城店", "黄纸", "14.4"],
-          ["春天路店", "花纸", "6.84"],
-          ["格林小城店", "中胶", "8.64"],
-          ["格林小城店", "废纸", "8.04"],
-          ["石井店", "花纸", "61.36"],
-          ["格林小城店", "花纸", "16.94"],
-          ["石井店", "塑料统货", "77.8"],
-          ["格林小城店", "矿泉水瓶", "11.51"],
-          ["格林小城店", "冬装", "1.68"],
-          ["春天路店", "冬装", "3"],
-          ["格林小城店", "衣物统货", "10.87"],
-          ["春天路店", "黄纸", "58.49"],
-          ["格林小城店", "杂铁", "5.14"],
-          ["春天路店", "黄纸", "30"],
-          ["石井店", "黄纸", "38.4"],
-          ["格林小城店", "废纸统货", "4.08"],
-          ["春天路店", "台式电脑", "126.4"],
-          ["石井店", "废纸", "28"],
-          ["格林小城店", "黄纸", "47.2"],
-          ["春天路店", "废纸统货", "19.04"],
-          ["格林小城店", "花纸", "45.5"],
-          ["春天路店", "废纸统货", "5.06"],
-          ["格林小城店", "黄纸", "5"],
-          ["春天路店", "黄纸", "6.6"],
-          ["格林小城店", "塑料", "7.7"],
-          ["格林小城店", "废纸统货", "1449.2"],
-          ["春天路店", "废纸统货", "29.07"],
-          ["石井店", "杂铁", "9.1"],
-          ["石井店", "鞋包", "25.2"],
-          ["春天路店", "黄纸", "51.15"],
-          ["石井店", "黄纸", "66"],
-          ["春天路店", "花纸", "22.45"],
-          ["石井店", "花纸", "19.04"],
-        ],
+          ['石井店', '黄纸', '326'],
+          ['石井店', '塑料', '10.2'],
+          ['春天路店', '厚铁', '78.8'],
+          ['格林小城店', '衣服', '185'],
+          ['春天路店', '拉罐', '0.8'],
+          ['格林小城店', '杂铁', '2.8'],
+          ['格林小城店', '矿泉水瓶', '4.1'],
+          ['春天路店', '中胶', '15.9'],
+          ['春天路店', '拉罐', '99.4'],
+          ['格林小城店', '中胶', '67.1'],
+          ['春天路店', '矿泉水瓶', '62.9'],
+          ['格林小城店', '杂铁', '2.4'],
+          ['格林小城店', '矿泉水瓶', '9.2'],
+          ['春天路店', '杂铁', '11.2'],
+          ['格林小城店', '/黄纸', '35.12'],
+          ['春天路店', '矿泉水瓶', '3.61'],
+          ['格林小城店', '废纸', '2'],
+          ['石井店', '花纸', '29.84'],
+          ['格林小城店', '杂铁', '11.47'],
+          ['格林小城店', '黄纸', '15.8'],
+          ['石井店', '拉罐', '6.4'],
+          ['格林小城店', '废纸统货', '5.04'],
+          ['春天路店', '黄纸', '2.6'],
+          ['格林小城店', '黄纸', '13.2'],
+          ['石井店', '黄纸', '29.72'],
+          ['格林小城店', '/花纸', '29.73'],
+          ['春天路店', '废纸', '38.4'],
+          ['格林小城店', '黄纸', '14.4'],
+          ['春天路店', '花纸', '6.84'],
+          ['格林小城店', '中胶', '8.64'],
+          ['格林小城店', '废纸', '8.04'],
+          ['石井店', '花纸', '61.36'],
+          ['格林小城店', '花纸', '16.94'],
+          ['石井店', '塑料统货', '77.8'],
+          ['格林小城店', '矿泉水瓶', '11.51'],
+          ['格林小城店', '冬装', '1.68'],
+          ['春天路店', '冬装', '3'],
+          ['格林小城店', '衣物统货', '10.87'],
+          ['春天路店', '黄纸', '58.49'],
+          ['格林小城店', '杂铁', '5.14'],
+          ['春天路店', '黄纸', '30'],
+          ['石井店', '黄纸', '38.4'],
+          ['格林小城店', '废纸统货', '4.08'],
+          ['春天路店', '台式电脑', '126.4'],
+          ['石井店', '废纸', '28'],
+          ['格林小城店', '黄纸', '47.2'],
+          ['春天路店', '废纸统货', '19.04'],
+          ['格林小城店', '花纸', '45.5'],
+          ['春天路店', '废纸统货', '5.06'],
+          ['格林小城店', '黄纸', '5'],
+          ['春天路店', '黄纸', '6.6'],
+          ['格林小城店', '塑料', '7.7'],
+          ['格林小城店', '废纸统货', '1449.2'],
+          ['春天路店', '废纸统货', '29.07'],
+          ['石井店', '杂铁', '9.1'],
+          ['石井店', '鞋包', '25.2'],
+          ['春天路店', '黄纸', '51.15'],
+          ['石井店', '黄纸', '66'],
+          ['春天路店', '花纸', '22.45'],
+          ['石井店', '花纸', '19.04']
+        ]
       },
       mRangconfig: {
         data: [
           {
-            name: "梁绍基",
-            value: 5082.7,
+            name: '梁绍基',
+            value: 5082.7
           },
           {
-            name: "罗祥进",
-            value: 3914.55,
+            name: '罗祥进',
+            value: 3914.55
           },
           {
-            name: "宋发国",
-            value: 3643.25,
-          },
+            name: '宋发国',
+            value: 3643.25
+          }
         ],
-        unit: "kg",
+        unit: 'kg',
         showValue: true,
-        colors: ["#4DBAED", "#8C5AF6", "#E677E7"],
-      },
-    };
+        colors: ['#4DBAED', '#8C5AF6', '#E677E7']
+      }
+    }
   },
-  mounted() {
+  mounted () {
+    this.today = this.dateFormat('YYYY-mm-dd HH:MM', new Date())
     setInterval(() => {
       this.changeToday()
-    }, 5000);
-    this.changeData();
+    }, 5000)
+    this.changeData()
   },
   methods: {
-    changeToday() {
+    changeToday () {
       // 当天8点时间戳
       let beiginTime =
         new Date(new Date().toLocaleDateString()).getTime() +
-        8 * 60 * 60 * 1000;
+        8 * 60 * 60 * 1000
       let endTime =
         new Date(new Date().toLocaleDateString()).getTime() +
-        22 * 60 * 60 * 1000;
-      let nowTime = new Date().getTime();
-      let all = 14 * 60 * 60 * 1000;
+        22 * 60 * 60 * 1000
+      let nowTime = new Date().getTime()
+      let all = 14 * 60 * 60 * 1000
       if (nowTime < beiginTime) {
-        this.person = 0;
-        this.money = 0;
-        this.weight = 0;
+        this.person = 0
+        this.money = 0
+        this.weight = 0
       }
       if (beiginTime < nowTime && nowTime < endTime) {
-        let during = nowTime - beiginTime;
-        this.person = parseFloat(802 * (during / all)).toFixed(2);
-        this.money = parseFloat(23580.75 * (during / all)).toFixed(2);
-        this.weight = parseFloat(11930 * (during / all)).toFixed(2);
+        let during = nowTime - beiginTime
+        this.person = parseInt(802 * (during / all))
+        this.money = parseFloat(23580.75 * (during / all)).toFixed(2)
+        this.weight = parseFloat(11930 * (during / all)).toFixed(2)
       }
       if (nowTime > endTime) {
-        this.person = 802;
-        this.money = 23580.75;
-        this.weight = 11930;
+        this.person = 802
+        this.money = 23580.75
+        this.weight = 11930
       }
-      config2.number = [parseFloat(this.weight)];
+      config2.number = [parseFloat(this.weight)]
       let a = JSON.parse(JSON.stringify(config2))
-      this.config = a;
+      this.config = a
+      this.today = this.dateFormat('YYYY-mm-dd HH:MM', new Date())
     },
-    changeData() {
-      let date = new Date();
-      let time = this.dateFormat("HH:MM", date);
+    changeData () {
+      let date = new Date()
+      let time = this.dateFormat('HH:MM', date)
       this.dataConfig.data.map((item) => {
         if (item.length === 3) {
-          item.push(time);
+          item.push(time)
         } else {
-          item[3] = time;
+          item[3] = time
         }
-        return item;
-      });
+        return item
+      })
     },
-    dateFormat(fmt, date) {
-      let ret;
+    dateFormat (fmt, date) {
+      let ret
       const opt = {
-        "Y+": date.getFullYear().toString(), // 年
-        "m+": (date.getMonth() + 1).toString(), // 月
-        "d+": date.getDate().toString(), // 日
-        "H+": date.getHours().toString(), // 时
-        "M+": date.getMinutes().toString(), // 分
-        "S+": date.getSeconds().toString(), // 秒
+        'Y+': date.getFullYear().toString(), // 年
+        'm+': (date.getMonth() + 1).toString(), // 月
+        'd+': date.getDate().toString(), // 日
+        'H+': date.getHours().toString(), // 时
+        'M+': date.getMinutes().toString(), // 分
+        'S+': date.getSeconds().toString() // 秒
         // 有其他格式化字符需求可以继续添加，必须转化成字符串
-      };
+      }
       for (let k in opt) {
-        ret = new RegExp("(" + k + ")").exec(fmt);
+        ret = new RegExp('(' + k + ')').exec(fmt)
         if (ret) {
           fmt = fmt.replace(
             ret[1],
-            ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, "0")
-          );
+            ret[1].length === 1 ? opt[k] : opt[k].padStart(ret[1].length, '0')
+          )
         }
       }
-      return fmt;
+      return fmt
     },
-    doUpdate(rows) {
-      this.$refs["scrollBoard"].updateRows(rows);
+    doUpdate (rows) {
+      this.$refs['scrollBoard'].updateRows(rows)
     },
-    formatter(number) {
-      const numbers = number.toString().split("").reverse();
-      const segs = [];
+    formatter (number) {
+      const numbers = number.toString().split('').reverse()
+      const segs = []
 
-      while (numbers.length) segs.push(numbers.splice(0, 3).join(""));
+      while (numbers.length) segs.push(numbers.splice(0, 3).join(''))
 
-      return segs.join(",").split("").reverse().join("");
-    },
-  },
-};
+      return segs.join(',').split('').reverse().join('')
+    }
+  }
+}
 </script>
 
 <style lang="scss">
